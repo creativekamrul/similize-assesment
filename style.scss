@@ -54,8 +54,8 @@ button {
   transition: all 0.4s ease, box-shadow 0.3s ease !important;
 
   &:hover {
-    transform: scale(1.05); // Slightly increase size
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add a subtle shadow
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
 }
 
@@ -127,14 +127,14 @@ header {
 // Responsive design for header
 @media (max-width: 1024px) {
   header .container {
-    padding: 20px; // Add 20px padding on both sides
+    padding: 20px; 
   }
 }
 
 @media (max-width: 768px) {
   header .container {
     flex-direction: column;
-    padding: 20px; // Add 20px padding on both sides
+    padding: 20px;
     
     nav {
       width: 100%;
@@ -170,7 +170,7 @@ header {
   }
 }
 
-// Keyframes for slide-in animation
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -182,7 +182,7 @@ header {
   }
 }
 
-// Keyframes for opacity-based entrance animation
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -194,9 +194,8 @@ header {
   }
 }
 
-// Apply fadeIn animation to main sections when the 'animate' class is added
 main section {
-  opacity: 0; // Initially hidden
+  opacity: 0; 
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
@@ -274,10 +273,10 @@ main section.animate {
 // Services Section
 #services {
   background-color: $off-white-color;
-  padding: 80px 0 120px; // Top padding 80px, bottom padding 120px
+  padding: 80px 0 120px;
 
   h2 {
-    font-size: 38px; // Desktop size
+    font-size: 38px;
     margin-bottom: 60px;
     color: $primary-color;
   }
@@ -309,16 +308,16 @@ main section.animate {
   }
 }
 
-// Media query for responsiveness
+
 @media (max-width: 1024px) {
   #services .services-grid {
-    grid-template-columns: 1fr; // Stack items on top of each other
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
   #services .services-grid {
-    grid-template-columns: 1fr; // Stack items on top of each other
+    grid-template-columns: 1fr;
   }
 }
 
@@ -363,7 +362,7 @@ main section.animate {
   }
 
   h2 {
-    font-size: 38px; // Desktop size
+    font-size: 38px;
     color: $divider-color;
     margin-bottom: 20px;
   }
@@ -402,7 +401,6 @@ main section.animate {
   }
 }
 
-// Media query for responsiveness
 @media (max-width: 768px) {
   #about {
     .about-text {
@@ -415,8 +413,8 @@ main section.animate {
     }
 
     p {
-      margin-top: 24px; // Add some space between title and description on mobile
-      align-self: flex-start; // Reset alignment for mobile view
+      margin-top: 24px;
+      align-self: flex-start;
     }
   }
 }
@@ -433,7 +431,7 @@ main section.animate {
   }
 
   h2 {
-    font-size: 38px; // Desktop size
+    font-size: 38px;
     color: $primary-color;
     margin-bottom: 20px;
   }
@@ -476,7 +474,7 @@ main section.animate {
           margin: 0;
           color: $secondary-color;
           font-size: 1rem;
-          padding-left: 39px; // 24px (icon width) + 15px (margin-right of icon)
+          padding-left: 40px;
         }
       }
     }
@@ -521,7 +519,6 @@ main section.animate {
   }
 }
 
-// Responsive design for contact section
 @media (max-width: 768px) {
   #contact {
     .contact-grid {
@@ -532,7 +529,7 @@ main section.animate {
 
 // Footer
 footer {
-  background-color: $background-color; // White background
+  background-color: $background-color;
   color: $text-color;
   padding: 40px 0;
   position: relative;
@@ -543,7 +540,7 @@ footer {
     left: 0;
     right: 0;
     height: 1px;
-    background-color: $divider-color; // Black divider
+    background-color: $divider-color;
   }
 
   .container {
@@ -577,7 +574,7 @@ footer {
 
   .footer-content-divider {
     height: 1px;
-    background-color: $light-divider-color; // Gray divider
+    background-color: $light-divider-color;
     margin: 40px 0;
   }
 
@@ -589,39 +586,35 @@ footer {
   }
 }
 
-// Responsive Design
 @media (max-width: 1024px) {
   #hero, #services, #about, #contact {
-    padding-bottom: 100px; // Slightly reduced spacing for medium-sized screens
+    padding-bottom: 100px;
   }
 
 
   .services-grid {
-    grid-template-columns: 1fr; // Stack items on top of each other
+    grid-template-columns: 1fr; 
   }
 }
 
 @media (max-width: 768px) {
   #hero, #services, #about, #contact {
-    padding: 32px 0 48px; // Reduce padding by 60% for mobile devices
+    padding: 32px 0 48px; 
   }
 
 
   .services-grid {
-    grid-template-columns: 1fr; // Stack items on top of each other
+    grid-template-columns: 1fr;
   }
 
-  // Adjust section headings for mobile
   #services h2,
   #about .about-header h2,
   #contact h2 {
-    font-size: 28px; // Mobile size
+    font-size: 28px;
   }
-
-  // Adjust hero title for mobile
   #hero h1 {
-    font-size: 38px; // Mobile size
-    line-height: 45px; // Mobile line-height
+    font-size: 38px;
+    line-height: 45px;
   }
 }
 
