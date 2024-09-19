@@ -468,6 +468,8 @@ footer .footer-content .social-icons {
 footer .footer-content .social-icons a img {
   width: 24px;
   height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 footer .footer-content-divider {
   height: 1px;
