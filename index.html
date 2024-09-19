@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero"><img src="img/logo.png" alt="EcoTech Solutions Logo" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Revolutionize Your World with EcoTech Solutions: The Ultimate Sustainable Technology Solution!</h1>
+                <p>Revolutionizing Sustainability: The EcoTech Solutions Advantage</p>
+                <div class="hero-buttons">
+                    <button class="cta-button">Learn More</button>
+                    <button class="secondary-button">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <img src="img/service-icon-1.png" alt="Solar Energy Icon">
+                        <h3>Solar Energy</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="img/service-icon-2.png" alt="Eco-Friendly Products Icon">
+                        <h3>Eco-Friendly Products</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="img/service-icon-3.png" alt="Green Consulting Icon">
+                        <h3>Green Consulting</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+              <div class="about-content">
+                <div class="about-text">
+                  <div class="about-header">
+                    <span class="section-label">About Us</span>
+                    <h2>Sustainable Green Technologies</h2>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                </div>
+              </div>
+              <div class="video-container">
+                <img src="img/about-video-bg.png" alt="Video Placeholder">
+                <button class="play-button">
+                  <img src="img/play-icon.png" alt="Play">
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact">
+            <div class="container">
+                <h2>Contact us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-item-header">
+                                <img src="img/envelope.png" alt="Email">
+                                <h3>Email</h3>
+                            </div>
+                            <p>info@ecotechsolutions.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-header">
+                                <img src="img/phone.png" alt="Phone">
+                                <h3>Phone</h3>
+                            </div>
+                            <p>+1 (555) 000-0000</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-header">
+                                <img src="img/map.png" alt="Office">
+                                <h3>Office</h3>
+                            </div>
+                            <p>123 Sample St, Sydney NSW 2000 AU</p>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Message" required></textarea>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="container">
+          <div class="footer-content">
+            <img src="img/logo.png" alt="EcoTech Solutions Logo" class="logo">
+            <div class="social-icons">
+                <a href="#"><img src="img/fb-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="img/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="img/yt-icon.png" alt="YouTube"></a>
+                <a href="#"><img src="img/insta-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="img/tiktok-icon.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <div class="footer-content-divider"></div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 EcoTech Solutions. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+        // JavaScript to toggle the menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // JavaScript to animate sections on scroll
+        const sections = document.querySelectorAll('main section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

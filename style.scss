@@ -1,0 +1,627 @@
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #333;
+$background-color: #ffffff;
+$text-color: #333;
+$max-width: 1440px;
+$off-white-color: #f8f8f8;
+$divider-color: #000000;
+$light-divider-color: #E0E0E0;
+$header-height: 80px;
+
+// Font
+$primary-font: 'Poppins', sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+// Global Styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+// Button Styles
+button {
+  cursor: pointer;
+  transition: all 0.4s ease, box-shadow 0.3s ease !important;
+
+  &:hover {
+    transform: scale(1.05); // Slightly increase size
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Add a subtle shadow
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+}
+// Header
+header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: $header-height;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .logo {
+        height: 40px;
+        width: 100px;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style-type: none;
+
+        li {
+          margin-right: 30px;
+          cursor: pointer;
+          a {
+            text-decoration: none;
+            color: $secondary-color;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+
+        span {
+          height: 3px;
+          width: 25px;
+          background: $secondary-color;
+          margin-bottom: 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design for header
+@media (max-width: 1024px) {
+  header .container {
+    padding: 20px; // Add 20px padding on both sides
+  }
+}
+
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    padding: 20px; // Add 20px padding on both sides
+    
+    nav {
+      width: 100%;
+      justify-content: space-between;
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        right: 0;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        animation: slideIn 0.3s ease-in-out;
+
+        li {
+          margin: 10px 0;
+        }
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  }
+}
+
+// Keyframes for slide-in animation
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Keyframes for opacity-based entrance animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply fadeIn animation to main sections when the 'animate' class is added
+main section {
+  opacity: 0; // Initially hidden
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+main section.animate {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cta-button {
+  @include button-style;
+  background-color: black;
+  color: white;
+
+  &:hover {
+    background-color: darken(black, 10%);
+  }
+}
+
+// Hero Section
+#hero {
+  background-image: url('img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: left;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: $header-height;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .cta-button {
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: darken(white, 10%);
+    }
+  }
+
+  .secondary-button {
+    @include button-style;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Services Section
+#services {
+  background-color: $off-white-color;
+  padding: 80px 0 120px; // Top padding 80px, bottom padding 120px
+
+  h2 {
+    font-size: 38px; // Desktop size
+    margin-bottom: 60px;
+    color: $primary-color;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+
+    .service-item {
+      text-align: left;
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $divider-color;
+      }
+
+      p {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+// Media query for responsiveness
+@media (max-width: 1024px) {
+  #services .services-grid {
+    grid-template-columns: 1fr; // Stack items on top of each other
+  }
+}
+
+@media (max-width: 768px) {
+  #services .services-grid {
+    grid-template-columns: 1fr; // Stack items on top of each other
+  }
+}
+
+// About Section
+#about {
+  background-color: $background-color;
+  padding: 80px 0 120px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .about-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .about-header {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .section-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $primary-color;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    display: block;
+  }
+
+  h2 {
+    font-size: 38px; // Desktop size
+    color: $divider-color;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-color;
+    width: 40%;
+    align-self: center; 
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
+
+// Media query for responsiveness
+@media (max-width: 768px) {
+  #about {
+    .about-text {
+      flex-direction: column;
+    }
+
+    .about-header,
+    p {
+      width: 100%;
+    }
+
+    p {
+      margin-top: 24px; // Add some space between title and description on mobile
+      align-self: flex-start; // Reset alignment for mobile view
+    }
+  }
+}
+
+// Contact Section
+#contact {
+  background-color: $off-white-color;
+  padding: 80px 0 120px;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-size: 38px; // Desktop size
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+  }
+
+  .contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+
+    .contact-info {
+      flex: 1;
+
+      .contact-item {
+        margin-bottom: 40px;
+
+        .contact-item-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+            color: $divider-color;
+            margin: 0;
+          }
+        }
+
+        p {
+          margin: 0;
+          color: $secondary-color;
+          font-size: 1rem;
+          padding-left: 39px; // 24px (icon width) + 15px (margin-right of icon)
+        }
+      }
+    }
+
+    .contact-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input,
+      textarea {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: $primary-font;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+
+      input {
+        height: 50px;
+      }
+
+      textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      button {
+        align-self: flex-start;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-family: $primary-font;
+      }
+    }
+  }
+}
+
+// Responsive design for contact section
+@media (max-width: 768px) {
+  #contact {
+    .contact-grid {
+      flex-direction: column;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $background-color; // White background
+  color: $text-color;
+  padding: 40px 0;
+  position: relative;
+
+  .footer-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $divider-color; // Black divider
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0px;
+
+    .logo {
+      height: 40px;
+      width: 100px;
+      object-fit: contain;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+
+      a {
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .footer-content-divider {
+    height: 1px;
+    background-color: $light-divider-color; // Gray divider
+    margin: 40px 0;
+  }
+
+  .footer-bottom {
+    p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  #hero, #services, #about, #contact {
+    padding-bottom: 100px; // Slightly reduced spacing for medium-sized screens
+  }
+
+
+  .services-grid {
+    grid-template-columns: 1fr; // Stack items on top of each other
+  }
+}
+
+@media (max-width: 768px) {
+  #hero, #services, #about, #contact {
+    padding: 32px 0 48px; // Reduce padding by 60% for mobile devices
+  }
+
+
+  .services-grid {
+    grid-template-columns: 1fr; // Stack items on top of each other
+  }
+
+  // Adjust section headings for mobile
+  #services h2,
+  #about .about-header h2,
+  #contact h2 {
+    font-size: 28px; // Mobile size
+  }
+
+  // Adjust hero title for mobile
+  #hero h1 {
+    font-size: 38px; // Mobile size
+    line-height: 45px; // Mobile line-height
+  }
+}
+
