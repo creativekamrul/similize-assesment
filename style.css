@@ -18,6 +18,10 @@ body {
   padding: 0 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   cursor: pointer;
   transition: all 0.4s ease, box-shadow 0.3s ease !important;
@@ -25,10 +29,6 @@ button {
 button:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 header {
@@ -480,7 +480,10 @@ footer .footer-bottom p {
 }
 
 @media (max-width: 1024px) {
-  #hero, #services, #about, #contact {
+  #hero,
+  #services,
+  #about,
+  #contact {
     padding-bottom: 100px;
   }
   .services-grid {
@@ -488,7 +491,10 @@ footer .footer-bottom p {
   }
 }
 @media (max-width: 768px) {
-  #hero, #services, #about, #contact {
+  #hero,
+  #services,
+  #about,
+  #contact {
     padding: 32px 0 48px;
   }
   .services-grid {

@@ -5,8 +5,8 @@ $background-color: #ffffff;
 $text-color: #333;
 $max-width: 1440px;
 $off-white-color: #f8f8f8;
-$divider-color: #000000;
-$light-divider-color: #E0E0E0;
+$black-color: #000000;
+$light-black-color: #E0E0E0;
 $header-height: 80px;
 
 // Font
@@ -48,24 +48,27 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 // Button Styles
 button {
   cursor: pointer;
   transition: all 0.4s ease, box-shadow 0.3s ease !important;
 
   &:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
-html{
-  scroll-behavior: smooth;
-}
+
 // Header
 header {
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
@@ -98,6 +101,7 @@ header {
         li {
           margin-right: 30px;
           cursor: pointer;
+
           a {
             text-decoration: none;
             color: $secondary-color;
@@ -124,10 +128,9 @@ header {
   }
 }
 
-// Responsive design for header
 @media (max-width: 1024px) {
   header .container {
-    padding: 20px; 
+    padding: 20px;
   }
 }
 
@@ -135,7 +138,7 @@ header {
   header .container {
     flex-direction: column;
     padding: 20px;
-    
+
     nav {
       width: 100%;
       justify-content: space-between;
@@ -151,7 +154,7 @@ header {
         left: 0;
         right: 0;
         padding: 20px 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         animation: slideIn 0.3s ease-in-out;
 
         li {
@@ -176,6 +179,7 @@ header {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -188,6 +192,7 @@ header {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -195,7 +200,7 @@ header {
 }
 
 main section {
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
@@ -298,7 +303,7 @@ main section.animate {
       h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
-        color: $divider-color;
+        color: $black-color;
       }
 
       p {
@@ -363,7 +368,7 @@ main section.animate {
 
   h2 {
     font-size: 38px;
-    color: $divider-color;
+    color: $black-color;
     margin-bottom: 20px;
   }
 
@@ -371,7 +376,7 @@ main section.animate {
     font-size: 1rem;
     color: $text-color;
     width: 40%;
-    align-self: center; 
+    align-self: center;
   }
 
   .video-container {
@@ -465,7 +470,7 @@ main section.animate {
 
           h3 {
             font-size: 1.2rem;
-            color: $divider-color;
+            color: $black-color;
             margin: 0;
           }
         }
@@ -540,7 +545,7 @@ footer {
     left: 0;
     right: 0;
     height: 1px;
-    background-color: $divider-color;
+    background-color: $black-color;
   }
 
   .container {
@@ -574,7 +579,7 @@ footer {
 
   .footer-content-divider {
     height: 1px;
-    background-color: $light-divider-color;
+    background-color: $light-black-color;
     margin: 40px 0;
   }
 
@@ -587,19 +592,27 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  #hero, #services, #about, #contact {
+
+  #hero,
+  #services,
+  #about,
+  #contact {
     padding-bottom: 100px;
   }
 
 
   .services-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  #hero, #services, #about, #contact {
-    padding: 32px 0 48px; 
+
+  #hero,
+  #services,
+  #about,
+  #contact {
+    padding: 32px 0 48px;
   }
 
 
@@ -612,9 +625,9 @@ footer {
   #contact h2 {
     font-size: 28px;
   }
+
   #hero h1 {
     font-size: 38px;
     line-height: 45px;
   }
 }
-
