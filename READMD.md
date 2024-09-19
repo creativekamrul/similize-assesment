@@ -1,0 +1,1 @@
+# This is the Take-Home Assignment for Web Developer Interview (Front-End Design) Project
